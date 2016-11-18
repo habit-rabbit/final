@@ -15,7 +15,8 @@ class Carousel extends Component {
 
     <div className="carousel-inner">
       <div className="item active">
-        <img src="http://placehold.it/1200x480" alt="Slide 1" />
+        <div className="container main-content">
+        </div>
         <div className="carousel-caption">
           <h1>Slide 1</h1>
           <p>Slide 1 Description</p>
@@ -23,7 +24,8 @@ class Carousel extends Component {
      </div>
 
       <div className="item">
-        <img src="http://placehold.it/1200x480" alt="Slide 2" />
+        <div className="container main-content">
+        </div>
         <div className="carousel-caption">
           <h1>Slide 2</h1>
           <p>Slide 2 Description</p>
@@ -31,7 +33,8 @@ class Carousel extends Component {
       </div>
 
       <div className="item">
-        <img src="http://placehold.it/1200x480" alt="Slide 3" />
+        <div className="container main-content">
+        </div>
         <div className="carousel-caption">
           <h1>Slide 3</h1>
           <p>Slide 3 Description</p>
@@ -39,13 +42,13 @@ class Carousel extends Component {
       </div>
 
     </div>
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
+  <a className="left carousel-control " href="#carousel-example-generic" role="button" data-slide="prev">
+    <span className="glyphicon glyphicon-chevron-left white" aria-hidden="true"></span>
+    <span className="sr-only">Previous</span>
   </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
+  <a className="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span className="glyphicon glyphicon-chevron-right white" aria-hidden="true"></span>
+    <span className="sr-only">Next</span>
   </a>
   </div>
     );
