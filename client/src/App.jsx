@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Nav from './partials/Nav.jsx'
-
+import Nav from './partials/Nav.jsx';
+import Carousel from './Carousel.jsx';
 class App extends Component {
 
 
@@ -10,7 +10,8 @@ class App extends Component {
     return (
       <div className="wrapper">
         <Nav />
-        Hello World!
+        <Carousel />
+
       </div>
     );
   }
