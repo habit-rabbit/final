@@ -1,14 +1,12 @@
 .glyphicon-th {
   font-size: 3em;
 }
-
-.navbar-brand {
-  margin: 0;
-  padding: 0;
-  line-height: 80px;
-  font-size: 3em;
+@media (min-width: 640px) {
+  .navbar-brand {
+    line-height: 42px;
+    font-size: 3em;
+  }
 }
-
 .make-goal {
   margin-left: 25%;
   margin-top: 20px;
