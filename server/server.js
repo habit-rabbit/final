@@ -1,5 +1,5 @@
 // server.js
-
+const ENV = process.env.ENV || "development";
 const express = require('express');
 const SocketServer = require('ws').Server;
 const uuid = require('node-uuid');
