@@ -3,15 +3,21 @@
 const express = require('express');
 const SocketServer = require('ws').Server;
 const uuid = require('node-uuid');
+const knexConfig    = require("./knexfile");
+const knex          = require("knex")(knexConfig[ENV]);
 
-// Set the port to 4000
-const PORT = 4000;
+// Set the port to 3001
+const PORT = 3001;
 
 // Create a new express server
 const server = express()
    // Make the express server serve static assets (html, javascript, css) from the /public folder
   .use(express.static('public'))
   .listen(PORT, '0.0.0.0', 'localhost', () => console.log(`Listening on ${ PORT }`));
+
+ var peeps = knex.select().from('users').then( (data) => {
+    console.log(data);
+  });
 
 // Create the WebSockets server
 const wss = new SocketServer({ server });
