@@ -5,6 +5,8 @@ const SocketServer = require('ws').Server;
 const uuid = require('node-uuid');
 const knexConfig    = require("./knexfile");
 const knex          = require("knex")(knexConfig[ENV]);
+const bcrypt = require('bcrypt');
+const cookieSession = require("cookie-session");
 
 // Set the port to 3001
 const PORT = 3001;
