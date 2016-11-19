@@ -7,6 +7,8 @@ require("../styles/application.scss");
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx';
+import Login from './Login.jsx';
+
 import { Router, Route, Link, hashHistory, IndexRoute, IndexRedirect } from 'react-router'
 ReactDOM.render(
 
@@ -16,7 +18,7 @@ ReactDOM.render(
  <Router history={hashHistory} >
     <Route path="/">
         <IndexRedirect to="/login" />
-      <Route path="/login" component={App} />
+      <Route path="/login" component={Login} />
     </Route>
     <Route path="/home" component={App} />
  </Router>
