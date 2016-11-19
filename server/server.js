@@ -13,18 +13,23 @@ const PORT = 3001;
 
 // Create a new express server
 const server = express()
-   // Make the express server serve static assets (html, javascript, css) from the /public folder
-  .use(express.static('public'))
-  .listen(PORT, '0.0.0.0', 'localhost', () => console.log(`Listening on ${ PORT }`));
+// Make the express server serve static assets (html, javascript, css) from the /public folder
+server.use(express.static('public'));
+//==============================================
+//=================================================
+server.get("/rabid/users", (req, res) => {
+   var peeps = knex.select('*')
+    .from('users')
+    .then( (data) => {
+        console.log(data);
+        res.send("good");
+    });
+});
 
- var peeps = knex.select('name')
-  .from('goals')
-  .where('user_id', 4)
-  .then( (data) => {
-    data.forEach ((goal) => {
-      console.log(goal.name);
-    })
-  });
+
+//==============================================
+
+
 
 // Create the WebSockets server
 const wss = new SocketServer({ server });
@@ -85,3 +90,4 @@ wss.on('connection', (ws) => {
   });
 });
 
+  server.listen(PORT, '0.0.0.0', 'localhost', () => console.log(`Listening on ${ PORT }`));
