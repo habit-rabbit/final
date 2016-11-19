@@ -5,6 +5,8 @@ const SocketServer = require('ws').Server;
 const uuid = require('node-uuid');
 const knexConfig    = require("./knexfile");
 const knex          = require("knex")(knexConfig[ENV]);
+const bcrypt = require('bcrypt');
+const cookieSession = require("cookie-session");
 
 // Set the port to 3001
 const PORT = 3001;
@@ -15,8 +17,13 @@ const server = express()
   .use(express.static('public'))
   .listen(PORT, '0.0.0.0', 'localhost', () => console.log(`Listening on ${ PORT }`));
 
- var peeps = knex.select().from('users').then( (data) => {
-    console.log(data);
+ var peeps = knex.select('name')
+  .from('goals')
+  .where('user_id', 4)
+  .then( (data) => {
+    data.forEach ((goal) => {
+      console.log(goal.name);
+    })
   });
 
 // Create the WebSockets server
