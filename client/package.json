@@ -45,7 +45,10 @@
     "webpack-dev-server": "1.14.1"
   },
   "dependencies": {
+    "bcrypt": "^0.8.7",
+    "cookie-session": "^2.0.0-alpha.2",
     "react": "15.2.1",
-    "react-dom": "15.2.1"
+    "react-dom": "15.2.1",
+    "react-router": "^3.0.0"
   }
 }
